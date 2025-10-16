@@ -1,6 +1,6 @@
 const products = {
   calyan: [
-    {id:1, title:"Aroma Hookah Bravo Blue", price:"₴2,600", image:"https://www.google.com/imgres?q=скачать%20фото%20кальян%20odin&imgurl=https%3A%2F%2Faladin-kiev.com%2Fimages%2Fproducts%2Fresize%2FShahta-Odin-Art-Back-To-the-Future.webp&imgrefurl=https%3A%2F%2Faladin-kiev.com%2Fkalyany%2Fdrugie-kalyany%2Fodin-hookah%2F&docid=D69U1fxclRszPM&tbnid=SOcYIXYPv9WYHM&vet=12ahUKEwj-4a63sqiQAxUKcPEDHSQzMpwQM3oECBMQAA..i&w=250&h=250&hcb=2&ved=2ahUKEwj-4a63sqiQAxUKcPEDHSQzMpwQM3oECBMQAA"},
+    {id:1, title:"Aroma Hookah Bravo Blue", price:"₴2,600", image:"https://skymarket.cc/images/catalog-products/01AR0701_big.jpg"},
     {id:2, title:"Aroma Hookah Bravo Original", price:"₴2,600", image:"calyan2.jpg"},
     {id:3, title:"Aroma Hookah Delta Black", price:"₴2,500", image:"calyan3.jpg"},
     {id:4, title:"Aroma Hookah Delta White", price:"₴2,500", image:"calyan4.jpg"},

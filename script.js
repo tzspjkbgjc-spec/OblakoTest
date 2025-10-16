@@ -1,6 +1,6 @@
 const products = {
   calyan: [
-    {id:1, title:"Aroma Hookah Bravo Blue", price:"₴2,600", image:"calyan1.jpg"},
+    {id:1, title:"Aroma Hookah Bravo Blue", price:"₴2,600", image:"https://skymarket.cc/images/catalog-products/01AR0705_big.jpg"},
     {id:2, title:"Aroma Hookah Bravo Original", price:"₴2,600", image:"calyan2.jpg"},
     {id:3, title:"Aroma Hookah Delta Black", price:"₴2,500", image:"calyan3.jpg"},
     {id:4, title:"Aroma Hookah Delta White", price:"₴2,500", image:"calyan4.jpg"},

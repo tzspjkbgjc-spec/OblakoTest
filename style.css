@@ -11,14 +11,48 @@ body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, '
 
 /* Background clouds */
 .bg{position:fixed;inset:0;overflow:hidden;z-index:0}
-.cloud{position:absolute;filter:blur(12px);opacity:0.9;background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.75) 30%, rgba(255,255,255,0.25) 60%, transparent 70%);border-radius:50%}
-.c1{width:540px;height:220px;left:-120px;top:10%;animation:move1 40s linear infinite}
-.c2{width:420px;height:180px;right:-80px;top:30%;animation:move2 60s linear infinite}
-.c3{width:700px;height:260px;left:10%;bottom:-60px;animation:move3 50s linear infinite;opacity:0.7}
+.clouds{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:5;
+}
 
-@keyframes move1{0%{transform:translateX(0)}50%{transform:translateX(60vw)}100%{transform:translateX(0)}}
-@keyframes move2{0%{transform:translateX(0)}50%{transform:translateX(-50vw)}100%{transform:translateX(0)}}
-@keyframes move3{0%{transform:translateX(0)}50%{transform:translateX(40vw)}100%{transform:translateX(0)}}
+.cloud{
+  position:absolute;
+  background:radial-gradient(circle at 40% 40%, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 70%, transparent 100%);
+  border-radius:50%;
+  opacity:0.8;
+  animation-timing-function:linear;
+  filter:blur(3px);
+}
+
+.c1{width:280px;height:120px;top:10%;left:-25%;animation:float1 24s linear infinite;}
+.c2{width:340px;height:140px;top:30%;left:-40%;animation:float2 28s linear infinite;}
+.c3{width:300px;height:130px;top:55%;left:-30%;animation:float3 26s linear infinite;}
+.c4{width:250px;height:110px;top:75%;left:-20%;animation:float4 30s linear infinite;}
+
+@keyframes float1{
+  0%{transform:translateX(0) translateY(0);}
+  50%{transform:translateX(80vw) translateY(15px);}
+  100%{transform:translateX(160vw) translateY(0);}
+}
+@keyframes float2{
+  0%{transform:translateX(0) translateY(0);}
+  50%{transform:translateX(70vw) translateY(-10px);}
+  100%{transform:translateX(140vw) translateY(0);}
+}
+@keyframes float3{
+  0%{transform:translateX(0) translateY(0);}
+  50%{transform:translateX(90vw) translateY(20px);}
+  100%{transform:translateX(180vw) translateY(0);}
+}
+@keyframes float4{
+  0%{transform:translateX(0) translateY(0);}
+  50%{transform:translateX(85vw) translateY(-15px);}
+  100%{transform:translateX(170vw) translateY(0);}
+}
 
 /* Header */
 .top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:18px 24px;background:linear-gradient(180deg, rgba(255,255,255,0.03), transparent);backdrop-filter: blur(2px);}

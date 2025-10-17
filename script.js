@@ -1,7 +1,7 @@
 // OblakoUa — simple shop with cart + Telegram checkout
 const products = [
   { id: 1, name: "Кальян Odin", price: 8950, img: "loki.jpg" },
-  { id: 2, name: "Кальян Karma", price: 8550, img: "loki.jpg" }
+  { id: 2, name: "Кальян Karma", price: 8550, img: "loki.jpg" },
 ];
 
 const container = document.getElementById("products");

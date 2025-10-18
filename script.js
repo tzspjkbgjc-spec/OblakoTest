@@ -145,3 +145,6 @@ checkoutBtn.addEventListener("click", ()=>{
 document.getElementById("year").textContent = new Date().getFullYear();
 renderProducts();
 renderCart();
+
+render('calyan');
+document.getElementById('year').textContent = new Date().getFullYear();

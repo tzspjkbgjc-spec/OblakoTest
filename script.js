@@ -1,8 +1,50 @@
 // OblakoUa — simple shop with cart + Telegram checkout
-const products = [
-  { id: 1, name: "Кальян Odin", price: 8950, img: "loki.jpg" }
-  { id: 2, name: "Кальян Karma", price: 8550, img: "karma.jpg" }
-];
+const products = {
+  odin: [
+    { id: 1, name: "Odin Hookah Classic", price: "₴2500", image: "images/odin1.jpg" },
+    { id: 2, name: "Odin Hookah Pro", price: "₴2900", image: "images/odin2.jpg" }
+  ],
+  karma: [
+    { id: 1, name: "Karma 2.0", price: "₴3100", image: "images/karma1.jpg" },
+    { id: 2, name: "Karma Mini", price: "₴2700", image: "images/karma2.jpg" }
+  ],
+  alpha: [
+    { id: 1, name: "Alpha Hookah S", price: "₴3500", image: "images/alpha1.jpg" }
+  ],
+  amy: [
+    { id: 1, name: "Amy Deluxe X", price: "₴2400", image: "images/amy1.jpg" },
+    { id: 2, name: "Amy Gold", price: "₴2800", image: "images/amy2.jpg" }
+  ]
+};
+
+const productsContainer = document.getElementById("products");
+const tabs = document.querySelectorAll(".tab");
+
+function renderProducts(category) {
+  const list = products[category] || [];
+  productsContainer.innerHTML = "";
+  list.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "product-card";
+    card.innerHTML = `
+      <img src="${p.image}" alt="${p.name}">
+      <h3>${p.name}</h3>
+      <p>${p.price}</p>
+      <button>Купить</button>
+    `;
+    productsContainer.appendChild(card);
+  });
+}
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    tabs.forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+    renderProducts(tab.dataset.category);
+  });
+});
+
+renderProducts("odin");
 
 const container = document.getElementById("products");
 const cartBtn = document.getElementById("cart-btn");

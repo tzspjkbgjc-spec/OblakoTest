@@ -1,4 +1,4 @@
-// OblakoUa — simple shop with cart + Telegram checkout
+
 const products = {
   odin: [
     { id: 1, name: "Odin Hookah Classic", price: "₴2500", image: "images/odin1.jpg" },

@@ -1,150 +1,178 @@
+// SVG-заглушка для фото товара
+const PLACEHOLDER = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+  `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
+     <rect width="100%" height="100%" fill="#1a1a1a"/>
+     <text x="50%" y="50%" font-size="28" dominant-baseline="middle" text-anchor="middle" fill="#555">Фото</text>
+   </svg>`
+);
+
+// Генерируем по 20 товаров для каждой категории.
+// Ты потом просто заменишь name / price / image.
+function createProducts(categoryLabel, categoryKey) {
+  return Array.from({ length: 20 }, (_, i) => ({
+    id: `${categoryKey}-${i + 1}`,          // уникальный ID
+    name: `${categoryLabel} Product ${i+1}`,// текст-заглушка
+    price: 1000 + i * 50,                   // цена-заглушка
+    image: PLACEHOLDER                      // картинка-заглушка
+  }));
+}
 
 const products = {
-  odin: [
-    { id: 1, name: "Odin Hookah Classic", price: "₴2500", image: "images/odin1.jpg" },
-    { id: 2, name: "Odin Hookah Pro", price: "₴2900", image: "images/odin2.jpg" }
-  ],
-  karma: [
-    { id: 1, name: "Karma 2.0", price: "₴3100", image: "images/karma1.jpg" },
-    { id: 2, name: "Karma Mini", price: "₴2700", image: "images/karma2.jpg" }
-  ],
-  alpha: [
-    { id: 1, name: "Alpha Hookah S", price: "₴3500", image: "images/alpha1.jpg" }
-  ],
-  amy: [
-    { id: 1, name: "Amy Deluxe X", price: "₴2400", image: "images/amy1.jpg" },
-    { id: 2, name: "Amy Gold", price: "₴2800", image: "images/amy2.jpg" }
-  ]
+  hookahs: createProducts("Hookah", "hookah"),
+  heat:    createProducts("Heat",   "heat"),
+  access:  createProducts("Access", "access"),
+  bowls:   createProducts("Bowl",   "bowl"),
+  vases:   createProducts("Vase",   "vase")
 };
 
-const productsContainer = document.getElementById("products");
-const tabs = document.querySelectorAll(".tab");
+// DOM-элементы
+const productsContainer = document.getElementById('products');
+const tabs = document.querySelectorAll('.tab');
 
-function renderProducts(category) {
+const cartBtn = document.getElementById('cart-btn');
+const cartModal = document.getElementById('cart-modal');
+const closeCart = document.getElementById('close-cart');
+const cartItems = document.getElementById('cart-items');
+const cartCount = document.getElementById('cart-count');
+const cartTotal = document.getElementById('cart-total');
+const tgOrder = document.getElementById('tg-order');
+
+// ---------- Рендер товаров под выбранной вкладкой ----------
+function render(category) {
   const list = products[category] || [];
-  productsContainer.innerHTML = "";
+  productsContainer.innerHTML = '';
+
   list.forEach(p => {
-    const card = document.createElement("div");
-    card.className = "product-card";
+    const card = document.createElement('div');
+    card.className = 'card';
     card.innerHTML = `
       <img src="${p.image}" alt="${p.name}">
       <h3>${p.name}</h3>
-      <p>${p.price}</p>
-      <button>Купить</button>
+      <p>${p.price} грн</p>
+      <button class="btn-buy" data-id="${p.id}">Додати в кошик</button>
     `;
     productsContainer.appendChild(card);
   });
 }
 
+// ---------- Логика вкладок ----------
 tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-    tabs.forEach(t => t.classList.remove("active"));
-    tab.classList.add("active");
-    renderProducts(tab.dataset.category);
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    render(tab.dataset.category);
   });
 });
 
-renderProducts("odin");
+// ---------- Корзина (сохранение в localStorage) ----------
+let cart = loadCartFromStorage();
 
-const container = document.getElementById("products");
-const cartBtn = document.getElementById("cart-btn");
-const cartModal = document.getElementById("cart-modal");
-const closeCart = document.getElementById("close-cart");
-const cartItemsEl = document.getElementById("cart-items");
-const cartCountEl = document.getElementById("cart-count");
-const cartTotalEl = document.getElementById("cart-total");
-const checkoutBtn = document.getElementById("checkout");
-const tgLinkEl = document.getElementById("tg-link");
+// открытие модалки корзины
+cartBtn.addEventListener('click', () => {
+  cartModal.classList.remove('hidden');
+  updateCart();
+});
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+// закрытие модалки
+closeCart.addEventListener('click', () => {
+  cartModal.classList.add('hidden');
+});
 
-// Render products
-function renderProducts(){
-  products.forEach(p => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <img src="${p.img}" alt="${p.name}" />
-      <h3>${p.name}</h3>
-      <p>${p.price} грн</p>
-      <button data-id="${p.id}">Добавить в корзину</button>
+// глобальный делегат кликов
+document.addEventListener('click', e => {
+  // добавить в корзину
+  if (e.target.classList.contains('btn-buy')) {
+    const id = e.target.dataset.id;
+    const item = Object.values(products).flat().find(p => p.id === id);
+    if (item) {
+      const exist = cart.find(c => c.id === id);
+      if (exist) {
+        exist.qty++;
+      } else {
+        cart.push({ ...item, qty: 1 });
+      }
+      saveCartToStorage();
+      updateCart();
+    }
+  }
+
+  // удалить из корзины
+  if (e.target.classList.contains('remove')) {
+    const id = e.target.dataset.id;
+    cart = cart.filter(c => c.id !== id);
+    saveCartToStorage();
+    updateCart();
+  }
+});
+
+// ---------- Обновление корзины в DOM + Telegram ссылка ----------
+function updateCart() {
+  cartItems.innerHTML = '';
+  let total = 0;
+
+  cart.forEach(item => {
+    const sum = item.price * item.qty;
+    total += sum;
+
+    const row = document.createElement('div');
+    row.className = 'cart-row';
+    row.innerHTML = `
+      <div style="flex:1; min-width:140px;">
+        ${item.name} × ${item.qty} — ${sum} грн
+      </div>
+      <button class="remove" data-id="${item.id}">✖</button>
     `;
-    container.appendChild(card);
+    cartItems.appendChild(row);
   });
-}
 
-// Cart render
-function renderCart(){
-  cartItemsEl.innerHTML = "";
-  if(cart.length === 0){
-    cartItemsEl.innerHTML = "<p>Корзина пуста</p>";
+  cartCount.textContent = cart.length;
+  cartTotal.textContent = total;
+
+  // Текст для Телеграма
+  let message = `🛒 *Новий заказ з Oblako_Team*\n\n`;
+
+  if (cart.length === 0) {
+    message += "Кошик порожній 😔";
   } else {
     cart.forEach(item => {
-      const row = document.createElement("div");
-      row.className = "cart-row";
-      row.innerHTML = `
-        <div>
-          <strong>${item.name}</strong><br/>
-          <small>${item.qty} × ${item.price} грн</small>
-        </div>
-        <div>
-          <button data-id="${item.id}" class="remove">Удалить</button>
-        </div>
-      `;
-      cartItemsEl.appendChild(row);
+      const sum = item.price * item.qty;
+      message += `• ${item.name} × ${item.qty} = ${sum} грн\n`;
     });
+    message += `\n💰 *Разом:* ${total} грн\n`;
+    message += `📞 Залиште ваш контакт або номер телефону для підтвердження.`;
   }
-  cartCountEl.textContent = cart.reduce((s,i)=>s+i.qty,0);
-  cartTotalEl.textContent = cart.reduce((s,i)=>s+i.qty*i.price,0);
-  localStorage.setItem("cart", JSON.stringify(cart));
+
+  const encoded = encodeURIComponent(message);
+
+  // генерим ссылку для кнопки оформления
+  // она открывает Telegram с текстом заказа, адресат — твой аккаунт @Market199
+  tgOrder.href = `https://t.me/share/url?url=https://t.me/Market199&text=${encoded}`;
 }
 
-// Add/remove handlers
-document.addEventListener("click", e => {
-  if(e.target.tagName === "BUTTON" && e.target.dataset.id && !e.target.classList.contains('remove')){
-    const id = Number(e.target.dataset.id);
-    const p = products.find(x => x.id === id);
-    if(!p) return;
-    const inCart = cart.find(x => x.id === id);
-    if(inCart) inCart.qty++;
-    else cart.push({ id: p.id, name: p.name, price: p.price, qty: 1 });
-    renderCart();
+// ---------- localStorage helpers ----------
+function saveCartToStorage() {
+  localStorage.setItem('oblako_cart', JSON.stringify(cart));
+}
+
+function loadCartFromStorage() {
+  try {
+    const raw = localStorage.getItem('oblako_cart');
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    // лёгкая валидация
+    if (!Array.isArray(parsed)) return [];
+    return parsed.map(item => ({
+      ...item,
+      qty: item.qty || 1
+    }));
+  } catch(e) {
+    return [];
   }
-  if(e.target.classList.contains("remove")){
-    const id = Number(e.target.dataset.id);
-    cart = cart.filter(x => x.id !== id);
-    renderCart();
-  }
-});
+}
 
-cartBtn.addEventListener("click", () => {
-  cartModal.classList.remove("hidden");
-  renderCart();
-});
-
-closeCart.addEventListener("click", ()=> cartModal.classList.add("hidden"));
-
-// Checkout via Telegram — uses placeholder username if not changed
-checkoutBtn.addEventListener("click", ()=>{
-  if(cart.length === 0){ alert("Корзина пустая"); return; }
-  const orderText = cart.map(i=>`${i.qty}× ${i.name} — ${i.price*i.qty} грн`).join("\n");
-  const total = cart.reduce((s,i)=>s+i.qty*i.price,0);
-  const message = `Заказ: \n${orderText}\nИтого: ${total} грн\n\nИмя:%20\nТелефон:%20\nАдрес/Комментарий:`;
-  // Replace with your Telegram username (without @), e.g. 'OblakoUaShopBot' or personal username
-  const tgUsername = "your_username"; // <-- замените на свой username без @
-  if(tgUsername && tgUsername !== "your_username"){
-    const url = `https://t.me/${tgUsername}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-  } else {
-    navigator.clipboard.writeText(message).then(()=>{
-      alert("Шаблон заказа скопирован в буфер. Вставьте в Telegram/Viber для отправки. Также замените 'your_username' в script.js на ваш Telegram username для быстрой отправки.");
-    });
-  }
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
-renderProducts();
-renderCart();
-
-render('calyan');
+// ---------- год в футере ----------
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// ---------- стартовый рендер ----------
+render('hookahs');
+updateCart();

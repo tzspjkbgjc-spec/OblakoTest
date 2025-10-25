@@ -1,10 +1,10 @@
 :root {
-  --bg: #0a0b0d;              /* фон страницы */
-  --panel: #121417;           /* панели/модалки/карточки */
-  --accent: #00c4a7;          /* мятно-бирюзовый акцент */
+  --bg: #0a0b0d;
+  --panel: #121417;
+  --accent: #00c4a7;
   --accent-hover: #00a88f;
-  --text: #e8eaea;            /* основной текст */
-  --muted: #8c9b95;           /* второстепенный текст */
+  --text: #e8eaea;
+  --muted: #8c9b95;
   --line: rgba(255,255,255,0.06);
 }
 
@@ -35,7 +35,7 @@ body {
   position: fixed;
   top: 0; left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 20;
 }
 
 .logo {
@@ -65,7 +65,7 @@ body {
   border-color: transparent;
 }
 
-/* ---------- вкладки категорий ---------- */
+/* ---------- основные вкладки ---------- */
 .tabs {
   display: flex;
   flex-wrap: nowrap;
@@ -78,7 +78,7 @@ body {
   top: 60px;
   left: 0;
   width: 100%;
-  z-index: 9;
+  z-index: 19;
   border-bottom: 1px solid var(--line);
 }
 
@@ -103,10 +103,52 @@ body {
   color: #111;
 }
 
+/* ---------- вложенные бренд-вкладки ---------- */
+.brand-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  background: rgba(20,25,25,0.6);
+  position: fixed;
+  top: 112px; /* под верхними вкладками */
+  left: 0;
+  width: 100%;
+  z-index: 18;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+}
+
+.brand-tabs.hidden {
+  display: none;
+}
+
+.brand-tab {
+  background: rgba(255,255,255,0.07);
+  color: var(--text);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.2s;
+  line-height: 1.2;
+}
+.brand-tab:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+.brand-tab.active {
+  background: var(--accent);
+  color: #111;
+}
+
 /* ---------- секция hero + грид ---------- */
 .hero,
 .grid {
-  margin-top: 130px; /* отступ под fixed-шапку и вкладки */
+  margin-top: 170px; /* отступ под фиксированные панели */
   text-align: center;
   position: relative;
   z-index: 2;
@@ -383,6 +425,10 @@ body {
 @media (max-width: 700px) {
   .tab {
     font-size: 14px;
+    padding: 6px 10px;
+  }
+  .brand-tab {
+    font-size: 13px;
     padding: 6px 10px;
   }
   .hero h1 {

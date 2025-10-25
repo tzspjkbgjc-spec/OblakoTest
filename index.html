@@ -1,59 +1,78 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Oblako_Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oblako_Team Market</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
- <div class="clouds-bg">
-  <img src="images/cloud.png" class="cloud c1" alt="">
-  <img src="images/cloud.png" class="cloud c2" alt="">
-  <img src="images/cloud.png" class="cloud c3" alt="">
-  <img src="images/cloud.png" class="cloud c4" alt="">
-</div>
+  <!-- фон с облаками -->
+  <div class="clouds-bg">
+    <img src="images/clouds.png" class="cloud c1" alt="">
+    <img src="images/clouds.png" class="cloud c2" alt="">
+    <img src="images/clouds.png" class="cloud c3" alt="">
+    <img src="images/clouds.png" class="cloud c4" alt="">
+    <img src="images/clouds.png" class="cloud c5" alt="">
+  </div>
+
+  <!-- верхняя панель -->
   <header class="top">
     <div class="logo">Oblako<span>Team</span></div>
-    <button id="cart-btn" class="cart-btn">Корзина (<span id="cart-count">0</span>)</button>
+    <button id="cart-btn" class="cart-btn">
+      🛒 Кошик (<span id="cart-count">0</span>)
+    </button>
   </header>
-<nav class="tabs">
-    <button data-category="odin" class="tab active">Odin</button>
-    <button data-category="karma" class="tab">Karma</button>
-    <button data-category="alpha" class="tab">Totem </button>
-    <button data-category="amy" class="tab">Khmara </button>
-    <button data-category="amy" class="tab">Sky Hookah</button>
+
+  <!-- вкладки категорий -->
+  <nav class="tabs">
+    <button data-category="hookahs" class="tab active">Кальяни</button>
+    <button data-category="heat" class="tab">Регулятори Жару</button>
+    <button data-category="access" class="tab">Аксесуари</button>
+    <button data-category="bowls" class="tab">Чаші</button>
+    <button data-category="vases" class="tab">Колби</button>
   </nav>
+
+  <!-- контент -->
   <main>
     <section class="hero">
-      <h1>Я УСТАЛ БОСС  </h1>
-      <p>Вдихни Мистецтво</p>
+      <h1>Oblako Team — преміум стиль, дим і якість</h1>
+      <p>Вибирай, що тобі до душі</p>
     </section>
 
     <section id="products" class="grid"></section>
   </main>
 
-  <!-- Cart modal -->
+  <!-- модалка корзины -->
   <div id="cart-modal" class="modal hidden">
-    <div class="modal-content">
-      <button id="close-cart" class="close">✕</button>
-      <h2>Корзина</h2>
+    <div class="modal-backdrop"></div>
+    <div class="modal-panel">
+      <button id="close-cart" class="modal-close">✖</button>
+      <h2>Ваш кошик</h2>
+
       <div id="cart-items"></div>
+
       <div class="cart-footer">
-        <div>Итого: <span id="cart-total">0</span> грн</div>
-        <div class="cart-actions">
-          <button id="checkout">Оформить через Telegram</button>
+        <div class="cart-total">
+          Разом: <span id="cart-total">0</span> грн
         </div>
+        <a id="tg-order"
+           class="btn-checkout"
+           href="https://t.me/Market199"
+           target="_blank">
+           Оформити замовлення
+        </a>
       </div>
     </div>
   </div>
 
+  <!-- футер -->
   <footer class="bottom">
-    <div class="contacts">
-      <p>Связь: <a href="https://t.me/Market199" target="_blank" id="tg-link">@Market199</a></p>
-      <p>Instagram: <a href="#" target="_blank">https://www.instagram.com/oblako_team?igsh=dnoyNG51aXlndHM=</a></p>
+    <p>© <span id="year"></span> Oblako_Team — створено з любов’ю до диму 💨</p>
+    <div class="social">
+      <a href="https://t.me/Market199" target="_blank">@Market199</a>
+      <a href="https://www.instagram.com/oblako_team?igsh=dnoyNG51aXlndHM=" target="_blank">Instagram</a>
     </div>
-    <p>© <span id="year"></span> OblakoTeam</p>
   </footer>
 
   <script src="script.js"></script>

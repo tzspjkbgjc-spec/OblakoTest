@@ -136,7 +136,7 @@ body {
 
 .tabs {
   position: fixed;
-  top: 112px;
+  top: 125px;
   left: 0;
   width: 100%;
   z-index: 38;
@@ -182,7 +182,7 @@ body {
 
 .brand-tabs {
   position: fixed;
-  top: 164px;
+  top: 180px;
   left: 0;
   width: 100%;
   z-index: 37;

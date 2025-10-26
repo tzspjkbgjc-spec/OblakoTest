@@ -639,3 +639,13 @@ body {
     min-width: 180px;
   }
 }
+
+/* Коррекция отступов для мобильных */
+@media (max-width: 768px) {
+  .tabs {
+    top: 130px; /* чуть ниже на телефонах */
+  }
+  .brand-tabs {
+    top: 185px;
+  }
+}

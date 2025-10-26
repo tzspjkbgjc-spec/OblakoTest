@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Oblako_Team Market</title>
+  <title>Oblako Team Market</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- фон с облаками -->
+  <!-- фон з хмарами -->
   <div class="clouds-bg">
     <img src="images/clouds.png" class="cloud c1" alt="">
     <img src="images/clouds.png" class="cloud c2" alt="">
@@ -16,24 +16,33 @@
     <img src="images/clouds.png" class="cloud c5" alt="">
   </div>
 
-  <!-- верхняя панель -->
+  <!-- верхня панель -->
   <header class="top">
     <div class="logo">Oblako<span>Team</span></div>
+
     <button id="cart-btn" class="cart-btn">
       🛒 Кошик (<span id="cart-count">0</span>)
     </button>
   </header>
 
-  <!-- основные вкладки -->
+  <!-- вкладки категорій -->
   <nav class="tabs">
     <button data-category="hookahs" class="tab active">Кальяни</button>
-    <button data-category="heat" class="tab">Регулятори Жару</button>
+    <button data-category="heat" class="tab">Регулятори жару</button>
     <button data-category="access" class="tab">Аксесуари</button>
     <button data-category="bowls" class="tab">Чаші</button>
     <button data-category="vases" class="tab">Колби</button>
   </nav>
 
-  <!-- вложенные вкладки брендов кальянов -->
+  <!-- гасло бренду (закріплено) -->
+  <div class="slogan-bar">
+    <div class="slogan-text">
+      <strong>Oblako Team — преміум стиль, дим і якість.</strong>
+      <span>Вибирай, що тобі до душі.</span>
+    </div>
+  </div>
+
+  <!-- внутрішні вкладки брендів кальянів -->
   <nav id="brand-tabs" class="brand-tabs">
     <button class="brand-tab active" data-brand="karma">Karma</button>
     <button class="brand-tab" data-brand="totem">Totem</button>
@@ -44,17 +53,12 @@
     <button class="brand-tab" data-brand="embery">Embery</button>
   </nav>
 
-  <!-- контент -->
+  <!-- контент товарів -->
   <main>
-    <section class="hero">
-      <h1>Oblako Team — преміум стиль, дим і якість</h1>
-      <p>Вибирай, що тобі до душі</p>
-    </section>
-
     <section id="products" class="grid"></section>
   </main>
 
-  <!-- модалка корзины -->
+  <!-- модальне вікно кошика -->
   <div id="cart-modal" class="modal hidden">
     <div class="modal-backdrop"></div>
     <div class="modal-panel">
@@ -79,7 +83,7 @@
 
   <!-- футер -->
   <footer class="bottom">
-    <p>© <span id="year"></span> Oblako_Team — створено з любов’ю до диму 💨</p>
+    <p>© <span id="year"></span> Oblako Team — створено з любов’ю до диму 💨</p>
     <div class="social">
       <a href="https://t.me/Market199" target="_blank">@Market199</a>
       <a href="https://www.instagram.com/oblako_team?igsh=dnoyNG51aXlndHM=" target="_blank">Instagram</a>

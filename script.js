@@ -1,4 +1,6 @@
-// ---------- Плейсхолдер для изображений ----------
+// =======================
+// Плейсхолдер зображень
+// =======================
 const PLACEHOLDER = 'data:image/svg+xml;utf8,' + encodeURIComponent(
   `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
      <rect width="100%" height="100%" fill="#1a1a1a"/>
@@ -6,11 +8,13 @@ const PLACEHOLDER = 'data:image/svg+xml;utf8,' + encodeURIComponent(
    </svg>`
 );
 
-// ---------- ДАННЫЕ ТОВАРОВ ----------
-// ВАЖНО:
-// brand: "karma" | "odin" | "totem" | "sky" | "tiaga" | "gramm" | "embery"
+// =======================
+// ДАНІ ТОВАРІВ
+// =======================
+// УВАГА: brand обов'язково відповідає значенню data-brand у кнопці бренду
+// Karma / Totem / Odin / Sky / Tiaga / Gramm / Embery
 
-// Karma (20 штук, твои)
+// KARMA (20 твої)
 const hookahsKarma = [
   { id: "karma-1",  brand: "karma", name: "KARMA MODEL 0.0 ЖОВТИЙ", price: 8029, image: PLACEHOLDER },
   { id: "karma-2",  brand: "karma", name: "KARMA MODEL 0.0 ЗЕЛЕНИЙ", price: 7979, image: PLACEHOLDER },
@@ -22,7 +26,7 @@ const hookahsKarma = [
   { id: "karma-8",  brand: "karma", name: "KARMA MODEL 0.1 WALNUT БЛАКИТНИЙ", price: 9479, image: PLACEHOLDER },
   { id: "karma-9",  brand: "karma", name: "KARMA MODEL 0.1 WALNUT КОРИЧНЕВИЙ", price: 9679, image: PLACEHOLDER },
   { id: "karma-10", brand: "karma", name: "KARMA MODEL 0.1 WALNUT СІРИЙ", price: 9479, image: PLACEHOLDER },
-  { id: "karma-11", brand: "karma", name: "KARMA MODEL 0.1 WALNUT ФІСТАШКОВИЙ", price: 9479, image: "images/karma01.png" },
+  { id: "karma-11", brand: "karma", name: "KARMA MODEL 0.1 WALNUT ФІСТАШКОВИЙ", price: 9479, image: PLACEHOLDER },
   { id: "karma-12", brand: "karma", name: "KARMA MODEL 0.1 WALNUT ЧОРНИЙ", price: 9479, image: PLACEHOLDER },
   { id: "karma-13", brand: "karma", name: "KARMA MODEL 0.1 ЖОВТА", price: 7829, image: PLACEHOLDER },
   { id: "karma-14", brand: "karma", name: "KARMA MODEL 0.1 ЧОРНИЙ", price: 7779, image: PLACEHOLDER },
@@ -34,7 +38,7 @@ const hookahsKarma = [
   { id: "karma-20", brand: "karma", name: "KARMA MODEL 1.1 WALNUT ЧЕРВОНИЙ", price: 7829, image: PLACEHOLDER }
 ];
 
-// Odin (30 штук, твои)
+// ODIN (30 твої)
 const hookahsOdin = [
   { id: "odin-1",  brand: "odin", name: "Odin Classic Mini Cosmo", price: 7260, image: PLACEHOLDER },
   { id: "odin-2",  brand: "odin", name: "Odin Classic Mini Sky", price: 7260, image: PLACEHOLDER },
@@ -68,21 +72,7 @@ const hookahsOdin = [
   { id: "odin-30", brand: "odin", name: "Odin Classic Royal Green (дубль)", price: 6760, image: PLACEHOLDER }
 ];
 
-// Заглушки для остальных брендов (30 штук каждая)
-function genBrandSet(brandKey, brandLabel, basePrice) {
-  const arr = [];
-  for (let i = 1; i <= 30; i++) {
-    arr.push({
-      id: `${brandKey}-${i}`,
-      brand: brandKey,
-      name: `${brandLabel} Model ${i}`,
-      price: basePrice + i * 10,
-      image: PLACEHOLDER
-    });
-  }
-  return arr;
-}
-
+// TOTEM (24)
 const hookahsTotem = [
   { id: "totem-1",  brand: "totem", name: "Totem Monolit Micra Sangria Red", price: 4100, image: PLACEHOLDER },
   { id: "totem-2",  brand: "totem", name: "Totem Monolit Micra Caroline Acid", price: 4400, image: PLACEHOLDER },
@@ -110,7 +100,7 @@ const hookahsTotem = [
   { id: "totem-24", brand: "totem", name: "Totem Monolit Ultra Wood Pure", price: 6700, image: PLACEHOLDER }
 ];
 
-const hookahsSky    = genBrandSet("sky",    "Sky",   6350);
+// TIAGA (24)
 const hookahsTiaga = [
   { id: "tiaga-1",  brand: "tiaga", name: "Tiaga Hookah Mini Classic Black", price: 1900, image: PLACEHOLDER },
   { id: "tiaga-2",  brand: "tiaga", name: "Tiaga Hookah Mini Classic Black Edition Clear", price: 1900, image: PLACEHOLDER },
@@ -138,6 +128,7 @@ const hookahsTiaga = [
   { id: "tiaga-24", brand: "tiaga", name: "Tiaga Hookah Astra Black", price: 4450, image: PLACEHOLDER }
 ];
 
+// GRAMM (24)
 const hookahsGramm = [
   { id: "gramm-1",  brand: "gramm", name: "Gramm Solo Green", price: 2350, image: PLACEHOLDER },
   { id: "gramm-2",  brand: "gramm", name: "Gramm Solo Red", price: 2350, image: PLACEHOLDER },
@@ -165,6 +156,7 @@ const hookahsGramm = [
   { id: "gramm-24", brand: "gramm", name: "Gramm Eco Classic", price: 3600, image: PLACEHOLDER }
 ];
 
+// EMBERY (30)
 const hookahsEmbery = [
   { id: "embery-1",  brand: "embery", name: "Embery Equal Black-Silver", price: 6900, image: PLACEHOLDER },
   { id: "embery-2",  brand: "embery", name: "Embery Equal Chameleon", price: 7100, image: PLACEHOLDER },
@@ -198,7 +190,43 @@ const hookahsEmbery = [
   { id: "embery-30", brand: "embery", name: "Embery Classic Mono Line", price: 4950, image: PLACEHOLDER }
 ];
 
-// теперь собираем всё в одну структуру products
+// SKY (30) — сгенерированные популярные варианты Sky Hookah
+const hookahsSky = [
+  { id: "sky-1",  brand: "sky", name: "Sky Hookah SDM Black", price: 3600, image: PLACEHOLDER },
+  { id: "sky-2",  brand: "sky", name: "Sky Hookah SDM Purple", price: 3600, image: PLACEHOLDER },
+  { id: "sky-3",  brand: "sky", name: "Sky Hookah SDM Blue Ice", price: 3600, image: PLACEHOLDER },
+  { id: "sky-4",  brand: "sky", name: "Sky Hookah SDM Emerald", price: 3600, image: PLACEHOLDER },
+  { id: "sky-5",  brand: "sky", name: "Sky Hookah SDM Red Lava", price: 3600, image: PLACEHOLDER },
+  { id: "sky-6",  brand: "sky", name: "Sky Hookah Mini Black", price: 3300, image: PLACEHOLDER },
+  { id: "sky-7",  brand: "sky", name: "Sky Hookah Mini Clear", price: 3300, image: PLACEHOLDER },
+  { id: "sky-8",  brand: "sky", name: "Sky Hookah Mini Blue", price: 3300, image: PLACEHOLDER },
+  { id: "sky-9",  brand: "sky", name: "Sky Hookah Mini Green", price: 3300, image: PLACEHOLDER },
+  { id: "sky-10", brand: "sky", name: "Sky Hookah Mini Pink", price: 3300, image: PLACEHOLDER },
+  { id: "sky-11", brand: "sky", name: "Sky Hookah Dream Black Edition", price: 4100, image: PLACEHOLDER },
+  { id: "sky-12", brand: "sky", name: "Sky Hookah Dream White Frost", price: 4100, image: PLACEHOLDER },
+  { id: "sky-13", brand: "sky", name: "Sky Hookah Dream Ocean", price: 4100, image: PLACEHOLDER },
+  { id: "sky-14", brand: "sky", name: "Sky Hookah Dream Forest", price: 4100, image: PLACEHOLDER },
+  { id: "sky-15", brand: "sky", name: "Sky Hookah Dream Ruby", price: 4100, image: PLACEHOLDER },
+  { id: "sky-16", brand: "sky", name: "Sky Hookah Clouds Black", price: 3900, image: PLACEHOLDER },
+  { id: "sky-17", brand: "sky", name: "Sky Hookah Clouds White", price: 3900, image: PLACEHOLDER },
+  { id: "sky-18", brand: "sky", name: "Sky Hookah Clouds Steel", price: 3900, image: PLACEHOLDER },
+  { id: "sky-19", brand: "sky", name: "Sky Hookah Clouds Ice Blue", price: 3900, image: PLACEHOLDER },
+  { id: "sky-20", brand: "sky", name: "Sky Hookah Clouds Violet", price: 3900, image: PLACEHOLDER },
+  { id: "sky-21", brand: "sky", name: "Sky Hookah Origin Black", price: 4000, image: PLACEHOLDER },
+  { id: "sky-22", brand: "sky", name: "Sky Hookah Origin White", price: 4000, image: PLACEHOLDER },
+  { id: "sky-23", brand: "sky", name: "Sky Hookah Origin Graphite", price: 4000, image: PLACEHOLDER },
+  { id: "sky-24", brand: "sky", name: "Sky Hookah Origin Olive", price: 4000, image: PLACEHOLDER },
+  { id: "sky-25", brand: "sky", name: "Sky Hookah Origin Burgundy", price: 4000, image: PLACEHOLDER },
+  { id: "sky-26", brand: "sky", name: "Sky Hookah Classic Matte Black", price: 3850, image: PLACEHOLDER },
+  { id: "sky-27", brand: "sky", name: "Sky Hookah Classic Chrome", price: 3850, image: PLACEHOLDER },
+  { id: "sky-28", brand: "sky", name: "Sky Hookah Classic Sand", price: 3850, image: PLACEHOLDER },
+  { id: "sky-29", brand: "sky", name: "Sky Hookah Classic Ice White", price: 3850, image: PLACEHOLDER },
+  { id: "sky-30", brand: "sky", name: "Sky Hookah Classic Night Blue", price: 3850, image: PLACEHOLDER }
+];
+
+// =======================
+// Комбінуємо всі бренди у products
+// =======================
 const products = {
   hookahs: [
     ...hookahsKarma,
@@ -215,7 +243,9 @@ const products = {
   vases: []
 };
 
-// ---------- DOM элементы ----------
+// =======================
+// DOM-ЕЛЕМЕНТИ
+// =======================
 const productsContainer = document.getElementById('products');
 const tabs = document.querySelectorAll('.tab');
 
@@ -230,7 +260,9 @@ const cartCount = document.getElementById('cart-count');
 const cartTotal = document.getElementById('cart-total');
 const tgOrder = document.getElementById('tg-order');
 
-// ---------- Рендер карточек ----------
+// =======================
+// РЕНДЕР ТОВАРІВ
+// =======================
 function render(category, brandFilter = null) {
   productsContainer.innerHTML = '';
 
@@ -253,7 +285,9 @@ function render(category, brandFilter = null) {
   });
 }
 
-// ---------- Логика верхних вкладок (категории) ----------
+// =======================
+// ПЕРЕМИКАННЯ КАТЕГОРІЙ
+// =======================
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
     tabs.forEach(t => t.classList.remove('active'));
@@ -262,24 +296,26 @@ tabs.forEach(tab => {
     const cat = tab.dataset.category;
 
     if (cat === 'hookahs') {
-      // показать брендовые табы
+      // показуємо бренди
       brandTabsContainer.classList.remove('hidden');
 
-      // активируем первую бренд-вкладку (Karma)
+      // робимо активним перший бренд (karma)
       brandTabs.forEach(bt => bt.classList.remove('active'));
       const firstBrandTab = document.querySelector('.brand-tab[data-brand="karma"]');
       if (firstBrandTab) firstBrandTab.classList.add('active');
 
       render('hookahs', 'karma');
     } else {
-      // скрыть брендовые табы
+      // ховаємо бренди для інших категорій
       brandTabsContainer.classList.add('hidden');
       render(cat);
     }
   });
 });
 
-// ---------- Логика бренд-вкладок внутри кальянов ----------
+// =======================
+// ПЕРЕМИКАННЯ БРЕНДІВ У "КАЛЬЯНИ"
+// =======================
 brandTabs.forEach(btab => {
   btab.addEventListener('click', () => {
     brandTabs.forEach(bt => bt.classList.remove('active'));
@@ -289,7 +325,9 @@ brandTabs.forEach(btab => {
   });
 });
 
-// ---------- Корзина с сохранением ----------
+// =======================
+// КОШИК (localStorage)
+// =======================
 let cart = loadCartFromStorage();
 
 cartBtn.addEventListener('click', () => {
@@ -301,16 +339,19 @@ closeCart.addEventListener('click', () => {
   cartModal.classList.add('hidden');
 });
 
-// делегирование кликов
+// делегування кліків
 document.addEventListener('click', e => {
-  // добавить в корзину
+  // додати в кошик
   if (e.target.classList.contains('btn-buy')) {
     const id = e.target.dataset.id;
-    const item = products.hookahs.find(p => p.id === id)
-      || products.heat.find(p => p.id === id)
-      || products.access.find(p => p.id === id)
-      || products.bowls.find(p => p.id === id)
-      || products.vases.find(p => p.id === id);
+
+    // шукаємо товар у всіх категоріях
+    const item =
+      products.hookahs.find(p => p.id === id) ||
+      products.heat.find(p => p.id === id) ||
+      products.access.find(p => p.id === id) ||
+      products.bowls.find(p => p.id === id) ||
+      products.vases.find(p => p.id === id);
 
     if (item) {
       const exist = cart.find(c => c.id === id);
@@ -324,7 +365,7 @@ document.addEventListener('click', e => {
     }
   }
 
-  // удалить из корзины
+  // видалити з кошика
   if (e.target.classList.contains('remove')) {
     const id = e.target.dataset.id;
     cart = cart.filter(c => c.id !== id);
@@ -333,7 +374,9 @@ document.addEventListener('click', e => {
   }
 });
 
-// ---------- Обновление корзины + Telegram ссылка ----------
+// =======================
+// ОНОВЛЕННЯ КОШИКА + TELEGRAM
+// =======================
 function updateCart() {
   cartItems.innerHTML = '';
   let total = 0;
@@ -356,7 +399,7 @@ function updateCart() {
   cartCount.textContent = cart.length;
   cartTotal.textContent = total;
 
-  // Текст для Телеграма
+  // Текст замовлення для Telegram
   let message = `🛒 *Новий заказ з Oblako_Team*\n\n`;
 
   if (cart.length === 0) {
@@ -372,11 +415,13 @@ function updateCart() {
 
   const encoded = encodeURIComponent(message);
 
-  // Ссылка открытия чата с тобой и сразу заполненный текст
+  // посилання прямо на твій акаунт з готовим текстом
   tgOrder.href = `https://t.me/Market199?text=${encoded}`;
 }
 
-// ---------- localStorage helpers ----------
+// =======================
+// localStorage helper'и
+// =======================
 function saveCartToStorage() {
   localStorage.setItem('oblako_cart', JSON.stringify(cart));
 }
@@ -396,12 +441,16 @@ function loadCartFromStorage() {
   }
 }
 
-// ---------- год в футере ----------
+// =======================
+// РІК У ФУТЕРІ
+// =======================
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// ---------- стартовый рендер ----------
+// =======================
+// СТАРТОВЕ ЗАВАНТАЖЕННЯ
+// =======================
 (function init() {
-  // при первой загрузке открыта категория кальяны + бренд Karma
+  // починаємо з категорії "Кальяни" і бренду "karma"
   render('hookahs', 'karma');
   updateCart();
 })();

@@ -1,9 +1,16 @@
-const PLACEHOLDER = "images/PLACEHOLDER;
+// Плейсхолдер
+const PLACEHOLDER = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+  `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
+     <rect width="100%" height="100%" fill="#1a1a1a"/>
+     <text x="50%" y="50%" font-size="28" dominant-baseline="middle" text-anchor="middle" fill="#555">Фото</text>
+   </svg>`
+);
+
 // =======================
 // Дані товарів (бренди кальянів)
 // =======================
 const hookahsKarma = [
-  { id: "karma-1",  brand: "karma", name: "KARMA MODEL 0.0 ЖОВТИЙ", price: 8029, image: "images/karma0.0yellow.jpg" },
+  { id: "karma-1",  brand: "karma", name: "KARMA MODEL 0.0 ЖОВТИЙ", price: 8029, image: PLACEHOLDER },
   { id: "karma-2",  brand: "karma", name: "KARMA MODEL 0.0 ЗЕЛЕНИЙ", price: 7979, image: PLACEHOLDER },
   { id: "karma-3",  brand: "karma", name: "KARMA MODEL 0.0 ЧЕРВОНИЙ", price: 8079, image: PLACEHOLDER },
   { id: "karma-4",  brand: "karma", name: "KARMA MODEL 0.0 ЧОРНИЙ", price: 7979, image: PLACEHOLDER },
@@ -13,7 +20,7 @@ const hookahsKarma = [
   { id: "karma-8",  brand: "karma", name: "KARMA MODEL 0.1 WALNUT БЛАКИТНИЙ", price: 9479, image: PLACEHOLDER },
   { id: "karma-9",  brand: "karma", name: "KARMA MODEL 0.1 WALNUT КОРИЧНЕВИЙ", price: 9679, image: PLACEHOLDER },
   { id: "karma-10", brand: "karma", name: "KARMA MODEL 0.1 WALNUT СІРИЙ", price: 9479, image: PLACEHOLDER },
-  { id: "karma-11", brand: "karma", name: "KARMA MODEL 0.1 WALNUT ФІСТАШКОВИЙ", price: 9479, image: "images/karma01.png" },
+  { id: "karma-11", brand: "karma", name: "KARMA MODEL 0.1 WALNUT ФІСТАШКОВИЙ", price: 9479, image: PLACEHOLDER },
   { id: "karma-12", brand: "karma", name: "KARMA MODEL 0.1 WALNUT ЧОРНИЙ", price: 9479, image: PLACEHOLDER },
   { id: "karma-13", brand: "karma", name: "KARMA MODEL 0.1 ЖОВТА", price: 7829, image: PLACEHOLDER },
   { id: "karma-14", brand: "karma", name: "KARMA MODEL 0.1 ЧОРНИЙ", price: 7779, image: PLACEHOLDER },
@@ -35,7 +42,7 @@ const hookahsOdin = [
   { id: "odin-7",  brand: "odin", name: "Odin Classic Mini Brown", price: 6260, image: PLACEHOLDER },
   { id: "odin-8",  brand: "odin", name: "Odin Classic Mini Crayon", price: 6260, image: PLACEHOLDER },
   { id: "odin-9",  brand: "odin", name: "Odin Classic Mini White", price: 6260, image: PLACEHOLDER },
-  { id: "odin-10", brand: "odin", name: "Odin Classic Mini Green", price: 6260, image: "images/odinmini.png" },
+  { id: "odin-10", brand: "odin", name: "Odin Classic Mini Green", price: 6260, image: PLACEHOLDER },
   { id: "odin-11", brand: "odin", name: "Odin Epoxy Royal Loki", price: 7570, image: PLACEHOLDER },
   { id: "odin-12", brand: "odin", name: "Odin Epoxy Royal Grey", price: 7570, image: PLACEHOLDER },
   { id: "odin-13", brand: "odin", name: "Odin Epoxy Royal Purple", price: 7570, image: PLACEHOLDER },
@@ -174,7 +181,7 @@ const hookahsEmbery = [
 
 const hookahsSky = [
   { id: "sky-1",  brand: "sky", name: "Sky Hookah SDM Black", price: 3600, image: PLACEHOLDER },
-  { id: "sky-2",  brand: "sky", name: "Sky Hookah SDM Purple", price: 3600, image: "images/sky purpl.png" },
+  { id: "sky-2",  brand: "sky", name: "Sky Hookah SDM Purple", price: 3600, image: PLACEHOLDER },
   { id: "sky-3",  brand: "sky", name: "Sky Hookah SDM Blue Ice", price: 3600, image: PLACEHOLDER },
   { id: "sky-4",  brand: "sky", name: "Sky Hookah SDM Emerald", price: 3600, image: PLACEHOLDER },
   { id: "sky-5",  brand: "sky", name: "Sky Hookah SDM Red Lava", price: 3600, image: PLACEHOLDER },

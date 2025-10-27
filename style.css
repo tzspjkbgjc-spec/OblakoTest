@@ -296,16 +296,15 @@ body {
   transform: translateY(-1px) scale(1.02);
 }
 
-/* ========= БРЕНДЫ КАЛЬЯНОВ ========= */
-
+/* ====== БРЕНДИ КАЛЬЯНОВ (ЗАКРІПЛЕНІ) ====== */
 .brand-tabs {
-  position: fixed;
-  top: 180px;
+  position: sticky;
+  top: 180px; /* нижче вкладок категорій */
   left: 0;
   width: 100%;
   z-index: 37;
 
-  background: rgba(26,15,13,0.55);
+  background: rgba(20, 25, 25, 0.75);
   border-bottom: 1px solid rgba(255,255,255,0.05);
   backdrop-filter: blur(8px);
 
@@ -321,9 +320,7 @@ body {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
-.brand-tabs.hidden {
-  display: none;
-}
+
 .brand-tabs::-webkit-scrollbar {
   display: none;
 }
@@ -334,30 +331,18 @@ body {
   font-weight: 600;
   font-size: 15px;
   color: var(--light);
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 999px;
   cursor: pointer;
   transition: all 0.25s ease;
-  line-height: 1.2;
-  box-shadow:
-    0 0 4px rgba(0,0,0,0.8),
-    inset 0 0 6px rgba(0,0,0,0.8);
 }
-.brand-tab:hover {
-  background: rgba(255,255,255,0.12);
-  transform: translateY(-1px);
-}
+
 .brand-tab.active {
   background: var(--accent);
   color: #0c0f13;
+  box-shadow: 0 0 12px var(--accent);
   border-color: var(--accent);
-  box-shadow:
-    0 0 6px var(--accent-soft),
-    0 0 24px var(--accent-soft),
-    inset 0 0 10px rgba(0,0,0,0.8),
-    inset 0 0 24px rgba(255,255,255,0.2);
-  transform: translateY(-1px) scale(1.02);
 }
 
 /* ========= СЕТКА ТОВАРОВ ========= */

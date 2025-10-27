@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- фон з хмарами -->
+  <!-- ФОН З ХМАРАМИ -->
   <div class="clouds-bg">
     <img src="images/clouds.png" class="cloud c1" alt="">
     <img src="images/clouds.png" class="cloud c2" alt="">
@@ -16,24 +16,31 @@
     <img src="images/clouds.png" class="cloud c5" alt="">
   </div>
 
-  <!-- верхня панель -->
-  <header class="top">
+  <!-- ПРИВІТАННЯ -->
+  <section id="welcome" class="welcome-screen">
+    <div class="welcome-content">
+      <h1>Oblako <span>Team</span></h1>
+      <p>Преміум стиль, дим і якість.<br>Ласкаво просимо до Oblako Team Market</p>
+      <button id="enter-btn">💨 Увійти в магазин</button>
+    </div>
+  </section>
+
+  <!-- ВЕРХНЯ ПАНЕЛЬ -->
+  <header class="top hidden">
     <div class="logo">Oblako<span>Team</span></div>
-    <button id="cart-btn" class="cart-btn">
-      🛒 Кошик (<span id="cart-count">0</span>)
-    </button>
+    <button id="cart-btn" class="cart-btn">🛒 Кошик (<span id="cart-count">0</span>)</button>
   </header>
 
-  <!-- гасло бренду (тепер одразу під шапкою, ЗАКРІПЛЕНО) -->
-  <div class="slogan-bar">
+  <!-- СЛОГАН -->
+  <div class="slogan-bar hidden">
     <div class="slogan-text">
       <strong>Oblako Team — преміум стиль, дим і якість.</strong>
       <span>Вибирай, що тобі до душі.</span>
     </div>
   </div>
 
-  <!-- вкладки категорій -->
-  <nav class="tabs">
+  <!-- ВКЛАДКИ -->
+  <nav class="tabs hidden">
     <button data-category="hookahs" class="tab active">Кальяни</button>
     <button data-category="heat" class="tab">Регулятори жару</button>
     <button data-category="access" class="tab">Аксесуари</button>
@@ -41,8 +48,8 @@
     <button data-category="vases" class="tab">Колби</button>
   </nav>
 
-  <!-- вкладки брендів кальянів -->
-  <nav id="brand-tabs" class="brand-tabs">
+  <!-- ВКЛАДКИ БРЕНДІВ -->
+  <nav id="brand-tabs" class="brand-tabs hidden">
     <button class="brand-tab active" data-brand="karma">Karma</button>
     <button class="brand-tab" data-brand="totem">Totem</button>
     <button class="brand-tab" data-brand="odin">Odin</button>
@@ -52,12 +59,12 @@
     <button class="brand-tab" data-brand="embery">Embery</button>
   </nav>
 
-  <!-- товари -->
+  <!-- ТОВАРИ -->
   <main>
-    <section id="products" class="grid"></section>
+    <section id="products" class="grid hidden"></section>
   </main>
 
-  <!-- модальне вікно кошика -->
+  <!-- МОДАЛЬНЕ ВІКНО КОШИКА -->
   <div id="cart-modal" class="modal hidden">
     <div class="modal-backdrop"></div>
     <div class="modal-panel">
@@ -65,100 +72,18 @@
       <h2>Ваш кошик</h2>
       <div id="cart-items"></div>
       <div class="cart-footer">
-        <div class="cart-total">
-          Разом: <span id="cart-total">0</span> грн
-        </div>
-        <a id="tg-order"
-           class="btn-checkout"
-           href="https://t.me/Market199"
-           target="_blank">
-           Оформити замовлення
-        </a>
+        <div class="cart-total">Разом: <span id="cart-total">0</span> грн</div>
+        <a id="tg-order" class="btn-checkout" href="https://t.me/Market199" target="_blank">Оформити замовлення</a>
       </div>
     </div>
   </div>
 
-  <!-- АДМІН-ПАНЕЛЬ (прихована, відкривається Shift + A) -->
-  <div id="admin-modal" class="admin-modal hidden">
-    <div class="admin-backdrop"></div>
-    <div class="admin-panel">
-      <button id="admin-close" class="admin-close">✖</button>
-      <h2>Адмін-панель</h2>
-
-      <div class="admin-row">
-        <label>Категорія</label>
-        <select id="admin-category">
-          <option value="hookahs">Кальяни</option>
-          <option value="heat">Регулятори жару</option>
-          <option value="access">Аксесуари</option>
-          <option value="bowls">Чаші</option>
-          <option value="vases">Колби</option>
-        </select>
-      </div>
-
-      <div class="admin-row" id="admin-brand-row">
-        <label>Бренд (для кальянів)</label>
-        <select id="admin-brand">
-          <option value="karma">Karma</option>
-          <option value="totem">Totem</option>
-          <option value="odin">Odin</option>
-          <option value="sky">Sky</option>
-          <option value="tiaga">Tiaga</option>
-          <option value="gramm">Gramm</option>
-          <option value="embery">Embery</option>
-        </select>
-      </div>
-
-      <div class="admin-row">
-        <label>Обрати товар</label>
-        <select id="admin-product-list"></select>
-      </div>
-
-      <div class="admin-row">
-        <label>Назва</label>
-        <input id="admin-name" type="text" />
-      </div>
-
-      <div class="admin-row">
-        <label>Ціна (грн)</label>
-        <input id="admin-price" type="number" min="0" />
-      </div>
-
-      <div class="admin-row">
-        <label>Фото (URL або data:image)</label>
-        <input id="admin-image" type="text" />
-      </div>
-
-      <div class="admin-actions">
-        <button id="admin-save" class="admin-btn primary">Зберегти</button>
-        <button id="admin-delete" class="admin-btn danger">Видалити</button>
-      </div>
-
-      <hr class="admin-sep"/>
-
-      <h3>Додати новий товар</h3>
-      <div class="admin-row">
-        <label>Назва</label>
-        <input id="new-name" type="text" placeholder="Назва нового товару..." />
-      </div>
-      <div class="admin-row">
-        <label>Ціна (грн)</label>
-        <input id="new-price" type="number" min="0" placeholder="0" />
-      </div>
-      <div class="admin-row">
-        <label>Фото (URL або data:image)</label>
-        <input id="new-image" type="text" placeholder="необов’язково" />
-      </div>
-      <button id="new-add" class="admin-btn full">Додати товар</button>
-    </div>
-  </div>
-
-  <!-- футер -->
-  <footer class="bottom">
+  <!-- ФУТЕР -->
+  <footer class="bottom hidden">
     <p>© <span id="year"></span> Oblako Team — створено з любов’ю до диму 💨</p>
     <div class="social">
       <a href="https://t.me/Market199" target="_blank">@Market199</a>
-      <a href="https://www.instagram.com/oblako_team?igsh=dnoyNG51aXlndHM=" target="_blank">Instagram</a>
+      <a href="https://www.instagram.com/oblako_team" target="_blank">Instagram</a>
     </div>
   </footer>
 

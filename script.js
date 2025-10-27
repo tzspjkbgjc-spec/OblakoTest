@@ -20,7 +20,7 @@ const hookahsKarma = [
   { id: "karma-8",  brand: "karma", name: "KARMA MODEL 0.1 WALNUT БЛАКИТНИЙ", price: 9479, image: PLACEHOLDER },
   { id: "karma-9",  brand: "karma", name: "KARMA MODEL 0.1 WALNUT КОРИЧНЕВИЙ", price: 9679, image: PLACEHOLDER },
   { id: "karma-10", brand: "karma", name: "KARMA MODEL 0.1 WALNUT СІРИЙ", price: 9479, image: PLACEHOLDER },
-  { id: "karma-11", brand: "karma", name: "KARMA MODEL 0.1 WALNUT ФІСТАШКОВИЙ", price: 9479, image: "imeges/karma01.png" },
+  { id: "karma-11", brand: "karma", name: "KARMA MODEL 0.1 WALNUT ФІСТАШКОВИЙ", price: 9479, image: "images/karma01.png" },
   { id: "karma-12", brand: "karma", name: "KARMA MODEL 0.1 WALNUT ЧОРНИЙ", price: 9479, image: PLACEHOLDER },
   { id: "karma-13", brand: "karma", name: "KARMA MODEL 0.1 ЖОВТА", price: 7829, image: PLACEHOLDER },
   { id: "karma-14", brand: "karma", name: "KARMA MODEL 0.1 ЧОРНИЙ", price: 7779, image: PLACEHOLDER },
@@ -42,7 +42,7 @@ const hookahsOdin = [
   { id: "odin-7",  brand: "odin", name: "Odin Classic Mini Brown", price: 6260, image: PLACEHOLDER },
   { id: "odin-8",  brand: "odin", name: "Odin Classic Mini Crayon", price: 6260, image: PLACEHOLDER },
   { id: "odin-9",  brand: "odin", name: "Odin Classic Mini White", price: 6260, image: PLACEHOLDER },
-  { id: "odin-10", brand: "odin", name: "Odin Classic Mini Green", price: 6260, image: "imeges/odinmini.png" },
+  { id: "odin-10", brand: "odin", name: "Odin Classic Mini Green", price: 6260, image: "images/odinmini.png" },
   { id: "odin-11", brand: "odin", name: "Odin Epoxy Royal Loki", price: 7570, image: PLACEHOLDER },
   { id: "odin-12", brand: "odin", name: "Odin Epoxy Royal Grey", price: 7570, image: PLACEHOLDER },
   { id: "odin-13", brand: "odin", name: "Odin Epoxy Royal Purple", price: 7570, image: PLACEHOLDER },
@@ -181,7 +181,7 @@ const hookahsEmbery = [
 
 const hookahsSky = [
   { id: "sky-1",  brand: "sky", name: "Sky Hookah SDM Black", price: 3600, image: PLACEHOLDER },
-  { id: "sky-2",  brand: "sky", name: "Sky Hookah SDM Purple", price: 3600, image: PLACEHOLDER },
+  { id: "sky-2",  brand: "sky", name: "Sky Hookah SDM Purple", price: 3600, image: "images/sky purpl.png" },
   { id: "sky-3",  brand: "sky", name: "Sky Hookah SDM Blue Ice", price: 3600, image: PLACEHOLDER },
   { id: "sky-4",  brand: "sky", name: "Sky Hookah SDM Emerald", price: 3600, image: PLACEHOLDER },
   { id: "sky-5",  brand: "sky", name: "Sky Hookah SDM Red Lava", price: 3600, image: PLACEHOLDER },

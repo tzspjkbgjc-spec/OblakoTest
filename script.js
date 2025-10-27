@@ -10,7 +10,7 @@ const PLACEHOLDER = 'data:image/svg+xml;utf8,' + encodeURIComponent(
 // Дані товарів (бренди кальянів)
 // =======================
 const hookahsKarma = [
-  { id: "karma-1",  brand: "karma", name: "KARMA MODEL 0.0 ЖОВТИЙ", price: 8029, image: PLACEHOLDER },
+  { id: "karma-1",  brand: "karma", name: "KARMA MODEL 0.0 ЖОВТИЙ", price: 8029, image: "images/karma0.0yellow.jpg" },
   { id: "karma-2",  brand: "karma", name: "KARMA MODEL 0.0 ЗЕЛЕНИЙ", price: 7979, image: PLACEHOLDER },
   { id: "karma-3",  brand: "karma", name: "KARMA MODEL 0.0 ЧЕРВОНИЙ", price: 8079, image: PLACEHOLDER },
   { id: "karma-4",  brand: "karma", name: "KARMA MODEL 0.0 ЧОРНИЙ", price: 7979, image: PLACEHOLDER },

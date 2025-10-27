@@ -23,30 +23,39 @@ const hookahsKarma = [
 const hookahsTotem = [
   { id: "totem-1", brand: "totem", name: "TOTEM MIKRA BLACK", price: 8550, image: "images/totemblack.jpg" },
   { id: "totem-2", brand: "totem", name: "TOTEM MIKRA SILVER", price: 8490, image: "images/totemsilver.jpg" },
+  { id: "totem-2", brand: "totem", name: "TOTEM MIKRA SILVER", price: 8490, image: "images/totemsilver.jpg" },
 ];
 
 const hookahsOdin = [
   { id: "odin-1", brand: "odin", name: "ODIN HOOKAH CLASSIC", price: 8950, image: "images/odinclassic.jpg" },
-  { id: "odin-2", brand: "odin", name: "ODIN MINI", price: 7350, image: "images/odinmini.jpg" },
+  { id: "totem-2", brand: "totem", name: "TOTEM MIKRA SILVER", price: 8490, image: "images/totemsilver.jpg" },
+  { id: "totem-2", brand: "totem", name: "TOTEM MIKRA SILVER", price: 8490, image: "images/totemsilver.jpg" },
 ];
 
 const products = {
   hookahs: [...hookahsKarma, ...hookahsTotem, ...hookahsOdin],
   heat: [
-    { id: "heat-1", name: "REGULATOR KALOUD LOTUS", price: 980, image: "images/kaloud.jpg" },
-    { id: "heat-2", name: "ALPHA HEAT MANAGER", price: 1150, image: "images/alphaheat.jpg" },
+    { id: "heat-1", name: "REGULATOR KALOUD LOTUS", price: 980, image: "images/tclb.png" },
+    { id: "heat-2", name: "ALPHA HEAT MANAGER", price: 1150, image: "images/khmaraadepd.png" },
+    { id: "heat-2", name: "ALPHA HEAT MANAGER", price: 1150, image: "images/lotus.png" },
   ],
   access: [
     { id: "acc-1", name: "ЩИПЦІ ДЛЯ ВУГІЛЛЯ", price: 350, image: "images/tongs.jpg" },
     { id: "acc-2", name: "ЩІТКА ДЛЯ КОЛБИ", price: 180, image: "images/brush.jpg" },
+    { id: "acc-2", name: "ЩІТКА ДЛЯ КОЛБИ", price: 180, image: "images/brush.jpg" },
+
   ],
   bowls: [
     { id: "bowl-1", name: "SOLARIS PHOBOS", price: 490, image: "images/solarisphobos.jpg" },
     { id: "bowl-2", name: "GUSTO BOWL CLASSIC", price: 550, image: "images/gusto.jpg" },
+    { id: "bowl-2", name: "GUSTO BOWL CLASSIC", price: 550, image: "images/gusto.jpg" },
+
   ],
   vases: [
     { id: "vase-1", name: "КОЛБА BLACK MAT", price: 990, image: "images/vaseblack.jpg" },
     { id: "vase-2", name: "КОЛБА CLEAR CLASSIC", price: 850, image: "images/vaseclear.jpg" },
+    { id: "vase-2", name: "КОЛБА CLEAR CLASSIC", price: 850, image: "images/vaseclear.jpg" },
+
   ],
 };
 

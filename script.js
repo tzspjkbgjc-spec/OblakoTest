@@ -273,7 +273,7 @@ function updateCartUI() {
 
   const msg = encodeURIComponent(lines.join("\n"));
   // !! Тут постав свій @username або пряме посилання на чат
-  tgCheckout.href = `https://t.me/oblako_team?text=${msg}`;
+  tgCheckout.href = `https://t.me/Market199?text=${msg}`;
 }
 
 // делегируем клики "добавить в корзину" на карточках

@@ -13,7 +13,7 @@ function item(id, brand, category, name, price, image) {
 
 const products = [
   // --- КАЛЬЯНИ KARMA ---
-  item("karma-1", "karma", "hookahs", "KARMA MODEL 0.0 ЖОВТИЙ", 8029, "images/placeholder.jpg"),
+  item("karma-1", "karma", "hookahs", "KARMA MODEL 0.0 ЖОВТИЙ", 8029, "images/karma0.0yellow.jpg"),
   item("karma-2", "karma", "hookahs", "KARMA MODEL 0.0 ЗЕЛЕНИЙ", 7979, "images/placeholder.jpg"),
   item("karma-3", "karma", "hookahs", "KARMA MODEL 0.0 ЧЕРВОНИЙ", 8079, "images/placeholder.jpg"),
   item("karma-4", "karma", "hookahs", "KARMA MODEL 0.0 ЧОРНИЙ", 7979, "images/placeholder.jpg"),

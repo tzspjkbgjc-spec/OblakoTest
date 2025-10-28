@@ -219,7 +219,7 @@ const accessories = [
 
 // Финальный список всех товаров
 const products = [
-  ...karmaHookahs,
+  ...hookahsKarma,
   ...odinHookahs,
   ...totemHookahs,
   ...skyHookahs,

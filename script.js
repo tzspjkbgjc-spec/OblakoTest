@@ -11,16 +11,28 @@ function item(id, brand, category, name, price, image) {
 // image: кидаєш свою фотку в папку /images/ і тут пишеш "images/назвафайлу.jpg"
 // поки ставлю "images/placeholder.jpg"
 
-const products = [
-  // --- КАЛЬЯНИ KARMA ---
-  item("karma-1", "karma", "hookahs", "KARMA MODEL 0.0 ЖОВТИЙ", 8029, "images/karma0.0yellow.jpg"),
-  item("karma-2", "karma", "hookahs", "KARMA MODEL 0.0 ЗЕЛЕНИЙ", 7979, "images/placeholder.jpg"),
-  item("karma-3", "karma", "hookahs", "KARMA MODEL 0.0 ЧЕРВОНИЙ", 8079, "images/placeholder.jpg"),
-  item("karma-4", "karma", "hookahs", "KARMA MODEL 0.0 ЧОРНИЙ", 7979, "images/placeholder.jpg"),
-  item("karma-5", "karma", "hookahs", "KARMA MODEL 0.1 WALNUT", 9629, "images/placeholder.jpg"),
-  item("karma-6", "karma", "hookahs", "KARMA MODEL 1.0 BLACK", 9990, "images/placeholder.jpg"),
-  item("karma-7", "karma", "hookahs", "KARMA MINI RAW EDITION", 7499, "images/placeholder.jpg"),
-  item("karma-8", "karma", "hookahs", "KARMA MINI SAND", 7399, "images/placeholder.jpg"),
+const hookahsKarma = [
+  { id: "karma-1",  name: "KARMA MODEL 0.0 ЖОВТИЙ",    price: 8029, image: "images/karma/karma0.0yellow.jpg" },
+  { id: "karma-2",  name: "KARMA MODEL 0.0 ЗЕЛЕНИЙ",   price: 7979, image: "images/karma/karma0.0green.jpg" },
+  { id: "karma-3",  name: "KARMA MODEL 0.0 ЧЕРВОНИЙ",  price: 8079, image: "images/karma/karma0.0red.jpg" },
+  { id: "karma-4",  name: "KARMA MODEL 0.0 ЧОРНИЙ",    price: 7979, image: "images/karma/karma0.0black.jpg" },
+  { id: "karma-5",  name: "KARMA MODEL 0.1 WALNUT",    price: 9629, image: "images/karma/karma0.1walnut.jpg" },
+  { id: "karma-6",  name: "KARMA MODEL 0.1 BLACK",     price: 9579, image: "images/karma/karma0.1black.jpg" },
+  { id: "karma-7",  name: "KARMA MODEL 0.1 WHITE",     price: 9629, image: "images/karma/karma0.1white.jpg" },
+  { id: "karma-8",  name: "KARMA MODEL 0.1 GREY",      price: 9579, image: "images/karma/karma0.1grey.jpg" },
+  { id: "karma-9",  name: "KARMA MODEL 1.0 BLACK",     price: 10079, image: "images/karma/karma1.0black.jpg" },
+  { id: "karma-10", name: "KARMA MODEL 1.0 WALNUT",    price: 10129, image: "images/karma/karma1.0walnut.jpg" },
+  { id: "karma-11", name: "KARMA MODEL 1.1 BLACK",     price: 10379, image: "images/karma/karma1.1black.jpg" },
+  { id: "karma-12", name: "KARMA MODEL 1.1 WALNUT",    price: 10429, image: "images/karma/karma1.1walnut.jpg" },
+  { id: "karma-13", name: "KARMA MODEL 2.0 BLACK",     price: 10979, image: "images/karma/karma2.0black.jpg" },
+  { id: "karma-14", name: "KARMA MODEL 2.0 GREY",      price: 11029, image: "images/karma/karma2.0grey.jpg" },
+  { id: "karma-15", name: "KARMA MODEL 2.0 WALNUT",    price: 11079, image: "images/karma/karma2.0walnut.jpg" },
+  { id: "karma-16", name: "KARMA MODEL 3.0 BLACK",     price: 11529, image: "images/karma/karma3.0black.jpg" },
+  { id: "karma-17", name: "KARMA MODEL 3.0 WHITE",     price: 11579, image: "images/karma/karma3.0white.jpg" },
+  { id: "karma-18", name: "KARMA MODEL 3.0 GREY",      price: 11629, image: "images/karma/karma3.0grey.jpg" },
+  { id: "karma-19", name: "KARMA MODEL 3.0 WALNUT",    price: 11679, image: "images/karma/karma3.0walnut.jpg" },
+  { id: "karma-20", name: "KARMA MINI BLACK",          price: 8529, image: "images/karma/karmaminiblack.jpg" },
+];
 
   // --- КАЛЬЯНИ ODIN ---
   item("odin-1", "odin", "hookahs", "ODIN HOOKAH CLASSIC BLACK", 8950, "images/placeholder.jpg"),

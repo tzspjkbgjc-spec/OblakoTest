@@ -23,27 +23,52 @@ function item(id, brand, category, name, price, image) {
 //  - "karma", "odin", "totem", "sky", "moze", "alpha", "oblako",
 //    "heatctrl", и т.д.
 
-const karmaHookahs = [
-  item("karma-1",  "karma", "hookahs", "KARMA MODEL 0.0 ЖОВТИЙ",        8029, "images/karma/karma0.0yellow.jpg"),
-  item("karma-2",  "karma", "hookahs", "KARMA MODEL 0.0 ЗЕЛЕНИЙ",       7979, "images/karma/karma0.0green.jpg"),
-  item("karma-3",  "karma", "hookahs", "KARMA MODEL 0.0 ЧЕРВОНИЙ",      8079, "images/karma/karma0.0red.jpg"),
-  item("karma-4",  "karma", "hookahs", "KARMA MODEL 0.0 ЧОРНИЙ",        7979, "images/karma/karma0.0black.jpg"),
-  item("karma-5",  "karma", "hookahs", "KARMA MODEL 0.1 WALNUT",        9629, "images/karma/karma0.1walnut.jpg"),
-  item("karma-6",  "karma", "hookahs", "KARMA MODEL 0.1 BLACK",         9579, "images/karma/karma0.1black.jpg"),
-  item("karma-7",  "karma", "hookahs", "KARMA MODEL 0.1 WHITE",         9629, "images/karma/karma0.1white.jpg"),
-  item("karma-8",  "karma", "hookahs", "KARMA MODEL 0.1 GREY",          9579, "images/karma/karma0.1grey.jpg"),
-  item("karma-9",  "karma", "hookahs", "KARMA MODEL 1.0 BLACK",        10079, "images/karma/karma1.0black.jpg"),
-  item("karma-10", "karma", "hookahs", "KARMA MODEL 1.0 WALNUT",       10129, "images/karma/karma1.0walnut.jpg"),
-  item("karma-11", "karma", "hookahs", "KARMA MODEL 1.1 BLACK",        10379, "images/karma/karma1.1black.jpg"),
-  item("karma-12", "karma", "hookahs", "KARMA MODEL 1.1 WALNUT",       10429, "images/karma/karma1.1walnut.jpg"),
-  item("karma-13", "karma", "hookahs", "KARMA MODEL 2.0 BLACK",        10979, "images/karma/karma2.0black.jpg"),
-  item("karma-14", "karma", "hookahs", "KARMA MODEL 2.0 GREY",         11029, "images/karma/karma2.0grey.jpg"),
-  item("karma-15", "karma", "hookahs", "KARMA MODEL 2.0 WALNUT",       11079, "images/karma/karma2.0walnut.jpg"),
-  item("karma-16", "karma", "hookahs", "KARMA MODEL 3.0 BLACK",        11529, "images/karma/karma3.0black.jpg"),
-  item("karma-17", "karma", "hookahs", "KARMA MODEL 3.0 WHITE",        11579, "images/karma/karma3.0white.jpg"),
-  item("karma-18", "karma", "hookahs", "KARMA MODEL 3.0 GREY",         11629, "images/karma/karma3.0grey.jpg"),
-  item("karma-19", "karma", "hookahs", "KARMA MODEL 3.0 WALNUT",       11679, "images/karma/karma3.0walnut.jpg"),
-  item("karma-20", "karma", "hookahs", "KARMA MINI BLACK",              8529, "images/karma/karmaminiblack.jpg"),
+const hookahsKarma = [
+  // ==== MODEL 0.x ====
+  { id: "karma00yellow", name: "KARMA MODEL 0.0 ЖОВТИЙ",    price: 8029, image: "images/karma/karma0.0yellow.jpg" },
+  { id: "karma00green",  name: "KARMA MODEL 0.0 ЗЕЛЕНИЙ",   price: 7979, image: "images/karma/karma0.0green.jpg" },
+  { id: "karma00red",    name: "KARMA MODEL 0.0 ЧЕРВОНИЙ",  price: 8079, image: "images/karma/karma0.0red.jpg" },
+  { id: "karma00black",  name: "KARMA MODEL 0.0 ЧОРНИЙ",    price: 7999, image: "images/karma/karma0.0black.jpg" },
+  { id: "karma01walnut", name: "KARMA MODEL 0.1 WALNUT",    price: 9629, image: "images/karma/karma0.1walnut.jpg" },
+  { id: "karma01black",  name: "KARMA MODEL 0.1 BLACK",     price: 9550, image: "images/karma/karma0.1black.jpg" },
+  { id: "karma01blue",   name: "KARMA MODEL 0.1 BLUE",      price: 9570, image: "images/karma/karma0.1blue.jpg" },
+
+  // ==== MODEL 1.x ====
+  { id: "karma10black",   name: "KARMA MODEL 1.0 BLACK",        price: 9990, image: "images/karma/karma1.0black.jpg" },
+  { id: "karma10wood",    name: "KARMA MODEL 1.0 WOOD",         price: 10090, image: "images/karma/karma1.0wood.jpg" },
+  { id: "karma10steel",   name: "KARMA MODEL 1.0 STEEL",        price: 10050, image: "images/karma/karma1.0steel.jpg" },
+  { id: "karma11bronze",  name: "KARMA MODEL 1.1 BRONZE",       price: 10390, image: "images/karma/karma1.1bronze.jpg" },
+  { id: "karma11gold",    name: "KARMA MODEL 1.1 GOLD ACCENTS", price: 10450, image: "images/karma/karma1.1gold.jpg" },
+  { id: "karma12classic", name: "KARMA MODEL 1.2 CLASSIC",      price: 10600, image: "images/karma/karma1.2classic.jpg" },
+
+  // ==== MODEL 2.x ====
+  { id: "karma20classicblack", name: "KARMA MODEL 2.0 CLASSIC BLACK", price: 11050, image: "images/karma/karma2.0classicblack.jpg" },
+  { id: "karma20classicwood",  name: "KARMA MODEL 2.0 CLASSIC WOOD",  price: 11200, image: "images/karma/karma2.0classicwood.jpg" },
+  { id: "karma20classicsteel", name: "KARMA MODEL 2.0 CLASSIC STEEL", price: 11150, image: "images/karma/karma2.0classicsteel.jpg" },
+  { id: "karma21wood",         name: "KARMA MODEL 2.1 WOOD EDITION",  price: 11400, image: "images/karma/karma2.1wood.jpg" },
+  { id: "karma21black",        name: "KARMA MODEL 2.1 BLACK EDITION", price: 11400, image: "images/karma/karma2.1black.jpg" },
+  { id: "karma21mini",         name: "KARMA MODEL 2.1 MINI / SHORT",  price: 10500, image: "images/karma/karma2.1mini.jpg" },
+
+  // ==== MODEL 3.x ====
+  { id: "karma30classicblack",  name: "KARMA MODEL 3.0 CLASSIC BLACK",  price: 11750, image: "images/karma/karma3.0classicblack.jpg" },
+  { id: "karma30classicwood",   name: "KARMA MODEL 3.0 CLASSIC WOOD",   price: 11800, image: "images/karma/karma3.0classicwood.jpg" },
+  { id: "karma30classicbronze", name: "KARMA MODEL 3.0 CLASSIC BRONZE", price: 11850, image: "images/karma/karma3.0classicbronze.jpg" },
+  { id: "karma31black",         name: "KARMA MODEL 3.1 BLACK",          price: 12000, image: "images/karma/karma3.1black.jpg" },
+  { id: "karma31wood",          name: "KARMA MODEL 3.1 WOOD / WALNUT",  price: 12150, image: "images/karma/karma3.1wood.jpg" },
+  { id: "karma31ivory",         name: "KARMA MODEL 3.1 STRIPE IVORY",   price: 12200, image: "images/karma/karma3.1ivory.jpg" },
+  { id: "karma31stripeblack",   name: "KARMA MODEL 3.1 STRIPE BLACK",   price: 12200, image: "images/karma/karma3.1stripeblack.jpg" },
+  { id: "karma31stripebrown",   name: "KARMA MODEL 3.1 STRIPE WALNUT",  price: 12200, image: "images/karma/karma3.1stripebrown.jpg" },
+  { id: "karma31mini",          name: "KARMA MODEL 3.1 MINI / SHORT",   price: 11000, image: "images/karma/karma3.1mini.jpg" },
+  { id: "karma32black",         name: "KARMA MODEL 3.2 BLACK",          price: 12300, image: "images/karma/karma3.2black.jpg" },
+  { id: "karma33premium",       name: "KARMA MODEL 3.3 PREMIUM",        price: 12500, image: "images/karma/karma3.3premium.jpg" },
+
+  // ==== MODEL 4.x ====
+  { id: "karma40black",   name: "KARMA MODEL 4.0 MATTE BLACK",      price: 12800, image: "images/karma/karma4.0black.jpg" },
+  { id: "karma40steel",   name: "KARMA MODEL 4.0 STEEL / SILVER",   price: 12900, image: "images/karma/karma4.0steel.jpg" },
+  { id: "karma40bronze",  name: "KARMA MODEL 4.0 BRONZE / BROWN",   price: 13000, image: "images/karma/karma4.0bronze.jpg" },
+  { id: "karma41black",   name: "KARMA MODEL 4.1 BLACK EDITION",    price: 13400, image: "images/karma/karma4.1black.jpg" },
+  { id: "karma41steel",   name: "KARMA MODEL 4.1 STEEL EDITION",    price: 13500, image: "images/karma/karma4.1steel.jpg" },
+  { id: "karma41limited", name: "KARMA MODEL 4.1 LIMITED / CUSTOM", price: 14000, image: "images/karma/karma4.1limited.jpg" }
 ];
 
 const odinHookahs = [

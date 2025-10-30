@@ -31,10 +31,9 @@ const hookahsKarma = [
   item("karma00yellow", "karma", "hookahs", "KARMA MODEL 0.0 ЖОВТИЙ",    8029, "images/karma/karma0.0yellow.jpg"),
   item("karma00green",  "karma", "hookahs", "KARMA MODEL 0.0 ЗЕЛЕНИЙ",   7979, "images/karma/karma0.0green.jpg"),
   item("karma00red",    "karma", "hookahs", "KARMA MODEL 0.0 ЧЕРВОНИЙ",  8079, "images/karma/karma0.0red.jpg"),
+  item("karma00black",  "karma", "hookahs", "KARMA MODEL 0.0 КОРИЧНЕВИЙ", 7999, "images/karma/karma0.0brown.jpg"),
   item("karma00black",  "karma", "hookahs", "KARMA MODEL 0.0 ЧОРНИЙ",    7999, "images/karma/karma0.0black.jpg"),
-  item("karma01walnut", "karma", "hookahs", "KARMA MODEL 0.1 WALNUT",    9629, "images/karma/karma0.1walnut.jpg"),
-  item("karma01black",  "karma", "hookahs", "KARMA MODEL 0.1 BLACK",     9550, "images/karma/karma0.1black.jpg"),
-  item("karma01blue",   "karma", "hookahs", "KARMA MODEL 0.1 BLUE",      9570, "images/karma/karma0.1blue.jpg"),
+ 
 
   // ==== MODEL 1.x ====
   item("karma10black",   "karma", "hookahs", "KARMA MODEL 1.0 BLACK",        9990, "images/karma/karma1.0black.jpg"),
@@ -143,7 +142,7 @@ const skyHookahs = [
   item("sky-20", "sky", "hookahs", "SKY HOOKAH ORIGIN GRAPHITE",         4000, "images/sky/origin-graphite.jpg"),
 ];
 
-const mozeHookahs = [
+const grammHookahs = [
   item("moze-1", "moze", "hookahs", "MOZE BREEZE TWO GRAPHITE",          6800, "images/moze/breeze-graphite.jpg"),
   item("moze-2", "moze", "hookahs", "MOZE BREEZE TWO WHITE PEARL",       6899, "images/moze/breeze-whitepearl.jpg"),
   item("moze-3", "moze", "hookahs", "MOZE BREEZE TWO GREEN PEARL",       6899, "images/moze/breeze-green.jpg"),
@@ -166,7 +165,7 @@ const mozeHookahs = [
   item("moze-20","moze", "hookahs", "MOZE BREEZE MINI MILKY",            6500, "images/moze/breeze-mini-milky.jpg"),
 ];
 
-const alphaHookahs = [
+const trumpetHookahs = [
   item("alpha-1",  "alpha", "hookahs", "ALPHA HOOKAH MODEL X BLACK",     9300, "images/alpha/modelx-black.jpg"),
   item("alpha-2",  "alpha", "hookahs", "ALPHA HOOKAH MODEL X BLUE NEON", 9450, "images/alpha/modelx-blue.jpg"),
   item("alpha-3",  "alpha", "hookahs", "ALPHA HOOKAH MODEL X RED",       9400, "images/alpha/modelx-red.jpg"),
